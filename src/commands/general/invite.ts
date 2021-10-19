@@ -11,12 +11,12 @@ export const command: Command = {
                 url: "https://discord.com/oauth2/authorize?client_id=786803477842100286&scope=bot%20applications.commands&permissions=268553222",
                 style: MessageComponentButtonStyles.LINK,
                 type: MessageComponentTypes.BUTTON
-            });
+            }).toJSON();
 
         payload.interaction.respond(InteractionCallbackTypes.CHANNEL_MESSAGE_WITH_SOURCE, {
             content: "Click the button below to invite me or click [Here](https://discord.com/oauth2/authorize?client_id=786803477842100286&scope=bot%20applications.commands&permissions=268553222).",
             components: [
-                { components: [component.toJSON()], type: MessageComponentTypes.ACTION_ROW }
+                { components: [component], type: MessageComponentTypes.ACTION_ROW }
             ]
         });
     }

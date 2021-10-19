@@ -1,7 +1,7 @@
 import { Event } from "../interfaces";
 import { GatewayClientEvents } from "detritus-client";
 import { InteractionDataApplicationCommand } from "detritus-client/lib/structures";
-import { ClientEvents } from "detritus-client/lib/constants";
+import { ApplicationCommandTypes, ClientEvents } from "detritus-client/lib/constants";
 
 export const event: Event = {
     name: ClientEvents.INTERACTION_CREATE,
@@ -10,7 +10,7 @@ export const event: Event = {
 
         if (interaction.member.bot || !interaction.guild) return;
 
-        if ((interaction.data as InteractionDataApplicationCommand).type === 1) {
+        if ((interaction.data as InteractionDataApplicationCommand).type === ApplicationCommandTypes.CHAT_INPUT || (interaction.data as InteractionDataApplicationCommand).type === ApplicationCommandTypes.USER) {
             const command = client.commands.get((interaction.data as InteractionDataApplicationCommand).name);
 
             if (!command) return;
