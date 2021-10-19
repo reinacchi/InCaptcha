@@ -1,0 +1,3 @@
+# Contributing
+
+Just do it.
