@@ -1,0 +1,8 @@
+{
+    "ADMIN": ["USER ID"],
+    "GUILD_HOME": {
+        "GuildID": "GUILD ID"
+    },
+    "PREFIX": "!",
+    "TOKEN": "BOT TOKEN"
+}

@@ -1,0 +1,47 @@
+{
+  "name": "detroit",
+  "version": "0.0.1-beta",
+  "description": "Client Interface Testing",
+  "main": "main.ts",
+  "scripts": {
+    "init": "ts-node-dev --respawn --transpile-only --poll main.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NotMarx/InCaptcha.git"
+  },
+  "keywords": [
+    "detritus",
+    "typescript",
+    "api",
+    "captcha"
+  ],
+  "author": "reinhardt",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/NotMarx/InCaptcha/issues"
+  },
+  "homepage": "https://github.com/NotMarx/InCaptcha#readme",
+  "devDependencies": {
+    "@types/lodash": "^4.14.175",
+    "@types/node": "^14.14.41",
+    "@typescript-eslint/eslint-plugin": "^4.26.1",
+    "@typescript-eslint/parser": "^4.26.1",
+    "eslint": "^7.28.0",
+    "ts-node": "^9.1.1",
+    "ts-node-dev": "^1.1.8",
+    "tslib": "^2.2.0",
+    "typescript": "^4.2.4"
+  },
+  "dependencies": {
+    "canvas": "^2.8.0",
+    "chalk": "^4.1.2",
+    "detritus-client": "^0.16.3",
+    "glob": "^7.2.0",
+    "lodash": "^4.17.21",
+    "moment": "^2.29.1",
+    "os": "^0.1.2",
+    "path": "^0.12.7",
+    "xen.db": "github:NotMarx/xen.db"
+  }
+}
