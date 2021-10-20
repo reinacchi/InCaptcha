@@ -1,9 +1,11 @@
 import { ShardClient, ShardClientRunOptions } from "detritus-client";
+import { ChannelBase } from "detritus-client/lib/structures";
 import { Database } from "xen.db";
 import { Command, Event } from "../interfaces";
 import { readdirSync } from "fs";
 import Config from "../../config.json";
 import path from "path";
+import { MessageCollector, MessageCollectorOptions } from "./messagecollector";
 
 export class InCaptcha extends ShardClient {
     public commands: Map<string, Command> = new Map();
@@ -37,5 +39,9 @@ export class InCaptcha extends ShardClient {
             this.events.set(event.name, event);
             this.on(event.name, event.run.bind(null, this));
         });
+    }
+
+    public awaitChannelMessages(channel: ChannelBase, options: MessageCollectorOptions): Promise<MessageCollector> {
+        return new MessageCollector(channel, options).run();
     }
 }
